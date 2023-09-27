@@ -174,3 +174,5 @@ If it is successful you should see json the looks likes this
     "Arn": "arn:aws:iam::784874566428:user/Terraform-User"
 }
 ```
+
+We'll need to generate AWS CLi creds in order to user the AWS CLI
