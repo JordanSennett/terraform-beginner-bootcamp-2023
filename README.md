@@ -209,6 +209,13 @@ This will run a plan and pass the changes that were made to be executed by terra
 
 If we want to have an auto approval you can use the auto approve command eg. `terraform apply --auto-approve`
 
+#### Terraform Destroy
+
+`terraform destroy`
+This command will destroy all resources that were created.
+
+you can also use the auto approve flag to skip the approve prompt eg. `terraform apply --auto-approve`
+
 ### Terraform Lock Files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be used with this project.
