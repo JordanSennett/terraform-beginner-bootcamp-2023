@@ -247,6 +247,14 @@ https://app.terraform.io/app/settings/tokens
 
 ```
 
+[
+    "credentials": {
+        "app.terraform.io": {
+            "token": "Terraform-token"
+        }
+    }
+]
+
 Then create open the file manually here:
 
 ```sh
@@ -257,3 +265,6 @@ open  /home/gitpod/.terraform.d/credentials.tfrc.json
 
 Then open the file
 
+``````
+
+We have automated the process the using the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
