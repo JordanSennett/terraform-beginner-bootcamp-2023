@@ -2,7 +2,9 @@ tasks:
   - name: terraform
     before: |
      source ./bin/install_terraform_cli
-     source ./bin/gerate_tfrc_credentials
+     source ./bin/generate_tfrc_credentials
+
+main
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
@@ -12,4 +14,5 @@ tasks:
 vscode:
   extensions:
     - amazonwebservices.aws-toolkit-vscode
-    - hashicorp.terraform
+    - hashicorp.terraform 
+    
