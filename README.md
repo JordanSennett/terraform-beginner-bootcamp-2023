@@ -1,5 +1,12 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of Contents
+
+- [Semantic Versioning](#Semantic-versioning)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+    - [Consideration with the Terraform CLI change](#considerations-with-the-terraform-cli-changes)
+
+
 ## Semantic Versioning :mage:
 
 This project is going to utilize semantic versioning for its tagging.
@@ -268,3 +275,7 @@ Then open the file
 ``````
 
 We have automated the process the using the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
+
+
+[](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
