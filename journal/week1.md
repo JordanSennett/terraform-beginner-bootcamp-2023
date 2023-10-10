@@ -57,6 +57,10 @@ This is the default file to load in terraform variables in bulk.
 
 If you lose your staefile you will have to tear down all of your cloud infrastructure manually and then re-import it.
 
+## Usig Terraform Refresh
+
+[Terraform Refresh](https://developer.hashicorp.com/terraform/cli/commands/refresh)
+
 ### Fix Missing Resources with Terraform Import
 
 `terraform import aws_s3_bucket.example`
@@ -69,3 +73,41 @@ If you lose your staefile you will have to tear down all of your cloud infrastru
 If someone deletes or modifies cloud resources manually via Clickops. 
 
 We can run Terraform plan to put our infrastructure back into the expected state fixing the *Configuration Drift*
+
+## Terraform Modules
+
+### Terraform Module Structure 
+
+It is recommended to place modules in a `modules` directory when locally developing modules but you can name it whatever you like. 
+
+## Passing Input Variables
+
+We can pass input variables to our module
+
+the module has to declare these TF variables in its own variables.tf
+
+```tf
+module "terrahous_aws"{
+  source = "./modules/terrahouse_aws"
+  user)uuid= var.user_uuid 
+  bucket_name = var.bucket)name
+}
+```
+
+## Module Sources
+
+Using the source we can import the module from various places eg:
+
+- locally
+- Github
+- Terraform Registry
+
+```tf
+module "terrahous_aws"{
+  source = "./modules/terrahouse_aws"
+}
+```
+[Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources) 
+
+
+[Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources) 
