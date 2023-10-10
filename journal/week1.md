@@ -111,3 +111,38 @@ module "terrahous_aws"{
 
 
 [Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources) 
+
+
+## Chat GPT considerations with TF langauge
+
+LLMs such as CHatGPT may not have information on the latest documentation or information about terraform
+
+it may likely produce older examples of code.
+
+## Working with files in TF
+
+## File exist function
+
+this function checks the existence of a file
+```
+condition = fileexists(var.index_html_filepath)
+```
+## File MD5
+
+https://developer.hashicorp.com/terraform/language/functions/file
+
+In terraform there is a soecial variable called `path` that allows us to reference local paths:
+- path.module = get the path for the current module
+- path.root = get the path for the root module
+
+[Special Path Var](https://developer.hashicorp.com/terraform/language/expressions/references)
+
+
+resource "aws_s3_bucket_object" "error_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "error.html"
+  source = var.error_html_filepath
+
+   etag = filemd5(var.error_html_filepath)
+}
+
