@@ -1,29 +1,32 @@
-# terraform {
+ terraform {
+  # backend "remote"{
+  #   hostname = "app.terraform.io"
+  #   organization = "GhettoTechGuy"
 
-#  cloud {
-#     organization = "GhettoTechGuy"
+  #   workspaces {
+  #     name = "terra-house-1"
+  #   }
+  # }
 
-#     workspaces {
-#       name = "terra-house-1"
-#     }
-#   }
+ cloud {
+    organization = "GhettoTechGuy"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
 
-#   required_providers {
-#     random = {
-#       source = "hashicorp/random"
-#       version = "3.5.1"
-#     }
-#     aws = {
-#       source = "hashicorp/aws"
-#       version = "5.18.1"
-#   }
-# }
-# }
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.18.1"
+  }
+ }
+}
 
-# provider "aws" {
-#   # Configuration options
-# }
+provider "aws" {
+  # Configuration options
+}
 
-# provider "random" {
-#   # Configuration options
-# }
+provider "random" {
+  # Configuration options
+}
